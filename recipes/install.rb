@@ -83,6 +83,7 @@ if install_type == 'file'
       home: "#{node['kibana']['install_dir']}/current"
     )
     cookbook 'kibana_lwrp'
+    default_logger true
 
     node['kibana']['service']['options'].each do |option_name, option_value|
       send(option_name, option_value)
